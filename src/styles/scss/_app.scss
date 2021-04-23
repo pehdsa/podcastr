@@ -1,0 +1,12 @@
+.appContainer {
+    position: relative;
+    padding-right: 26.5rem;
+
+    & > main {
+        height: 100vh;
+    }
+    & .conteudo {
+        height: calc(100vh - 6.5rem);
+        overflow-y: auto;
+    }
+}
