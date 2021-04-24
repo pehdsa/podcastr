@@ -67,7 +67,7 @@ export function PlayerProvider({ children } : PlayerProviderProps) {
 
     function playNext() {
         if(isShuffling) {
-            const nextRandomEpIndex = Math.floor(Math.random() + episodeList.length);
+            const nextRandomEpIndex = Math.floor(Math.random() * episodeList.length);
             setCurrentEpisodeIndex(nextRandomEpIndex);
         }
         else if ( hasNext) {
