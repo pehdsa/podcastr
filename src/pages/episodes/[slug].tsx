@@ -6,6 +6,8 @@ import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
+import { usePlayer } from '../../contexts/playerContext';
+
 type Episode = {
     id: string,      
     title: string,
@@ -24,6 +26,7 @@ type Episode = {
 
 export default function Episode({ episode }: EpisodeProps) {
 
+    const { play } = usePlayer();
 
     return (
         <div className="episodeContainer">
@@ -43,7 +46,7 @@ export default function Episode({ episode }: EpisodeProps) {
                     objectFit="cover" 
                 />
 
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}>
                     <img src="/play.svg" alt="Tocar episódio" />
                 </button>
                 
